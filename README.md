@@ -27,9 +27,3 @@
 <p align="center">
   <img src="./generated/stats.svg" alt="Contribution stats" />
 </p>
-
-<br/>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=tuncheva&label=Profile+views&color=06d6a0&style=flat-square" alt="profile views" />
-</p>
