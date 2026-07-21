@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="316" viewBox="0 0 460 316" role="img" aria-label="Contribution stats">
+<style>
+.bg{fill:#07242b;}
+.title{fill:#ffd60a;font:700 20px 'Segoe UI',Helvetica,Arial,sans-serif;}
+.sub{fill:#5ce1c6;font:400 12px 'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:2px;}
+.l{fill:#a9c7cf;font:400 16px 'Segoe UI',Helvetica,Arial,sans-serif;}
+.v{fill:#ffd60a;font:700 18px 'Segoe UI',Helvetica,Arial,sans-serif;}
+.rule{stroke:#123b42;stroke-width:1;}
+</style>
+<rect class="bg" width="460" height="316" rx="14"/>
+<text x="40" y="38" class="title">Contributions</text>
+<text x="40" y="58" class="sub">LAST 12 MONTHS</text>
+<text x="40" y="78" class="l">Commits</text><text x="420" y="78" class="v" text-anchor="end">7</text><line x1="40" y1="92" x2="420" y2="92" class="rule"/><text x="40" y="122" class="l">Pull Requests</text><text x="420" y="122" class="v" text-anchor="end">7</text><line x1="40" y1="136" x2="420" y2="136" class="rule"/><text x="40" y="166" class="l">Issues</text><text x="420" y="166" class="v" text-anchor="end">0</text><line x1="40" y1="180" x2="420" y2="180" class="rule"/><text x="40" y="210" class="l">Reviews</text><text x="420" y="210" class="v" text-anchor="end">0</text><line x1="40" y1="224" x2="420" y2="224" class="rule"/><text x="40" y="254" class="l">Repositories</text><text x="420" y="254" class="v" text-anchor="end">17</text><line x1="40" y1="268" x2="420" y2="268" class="rule"/>
+</svg>
