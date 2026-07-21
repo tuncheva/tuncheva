@@ -1,0 +1,91 @@
+name: Generate contribution stats
+
+on:
+  schedule:
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch contributions and build a simple yellow SVG
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LOGIN: ${{ github.repository_owner }}
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request
+          token = os.environ["GH_TOKEN"]
+          login = os.environ["LOGIN"]
+          query = """query($login:String!){
+            user(login:$login){
+              contributionsCollection{
+                totalCommitContributions
+                totalPullRequestContributions
+                totalIssueContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+              }
+            }
+          }"""
+          body = json.dumps({"query": query, "variables": {"login": login}}).encode()
+          req = urllib.request.Request(
+              "https://api.github.com/graphql",
+              data=body,
+              headers={"Authorization": "bearer " + token, "Content-Type": "application/json"},
+          )
+          data = json.load(urllib.request.urlopen(req))
+          c = data["data"]["user"]["contributionsCollection"]
+          stats = [
+              ("Commits", c["totalCommitContributions"]),
+              ("Pull Requests", c["totalPullRequestContributions"]),
+              ("Issues", c["totalIssueContributions"]),
+              ("Reviews", c["totalPullRequestReviewContributions"]),
+              ("Repositories", c["totalRepositoryContributions"]),
+          ]
+          pad_top, row_h = 78, 44
+          height = pad_top + row_h * len(stats) + 18
+          width = 460
+          rows = []
+          y = pad_top
+          for label, val in stats:
+              rows.append(f'<text x="40" y="{y}" class="l">{label}</text>')
+              rows.append(f'<text x="{width-40}" y="{y}" class="v" text-anchor="end">{val}</text>')
+              rows.append(f'<line x1="40" y1="{y+14}" x2="{width-40}" y2="{y+14}" class="rule"/>')
+              y += row_h
+          svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Contribution stats">
+          <style>
+          .bg{{fill:#07242b;}}
+          .title{{fill:#ffd60a;font:700 20px 'Segoe UI',Helvetica,Arial,sans-serif;}}
+          .sub{{fill:#5ce1c6;font:400 12px 'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:2px;}}
+          .l{{fill:#a9c7cf;font:400 16px 'Segoe UI',Helvetica,Arial,sans-serif;}}
+          .v{{fill:#ffd60a;font:700 18px 'Segoe UI',Helvetica,Arial,sans-serif;}}
+          .rule{{stroke:#123b42;stroke-width:1;}}
+          </style>
+          <rect class="bg" width="{width}" height="{height}" rx="14"/>
+          <text x="40" y="38" class="title">Contributions</text>
+          <text x="40" y="58" class="sub">LAST 12 MONTHS</text>
+          {"".join(rows)}
+          </svg>'''
+          os.makedirs("generated", exist_ok=True)
+          with open("generated/stats.svg", "w", encoding="utf-8") as f:
+              f.write(svg)
+          print("Wrote generated/stats.svg")
+          PY
+
+      - name: Commit and push
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A generated
+          git commit -m "chore: update contribution stats" || echo "No changes to commit"
+          git push
