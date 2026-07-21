@@ -22,8 +22,3 @@
 
 <br/>
 
-<h3 align="center">Contributions</h3>
-
-<p align="center">
-  <img src="./generated/stats.svg" alt="Contribution stats" />
-</p>
