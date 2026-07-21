@@ -1,46 +1,46 @@
 <svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tina Tuncheva">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#12100e"/>
-      <stop offset="55%" stop-color="#1c150f"/>
-      <stop offset="100%" stop-color="#2a1c10"/>
+      <stop offset="0%" stop-color="#062a30"/>
+      <stop offset="55%" stop-color="#0a3d3a"/>
+      <stop offset="100%" stop-color="#0e5a4e"/>
     </linearGradient>
-    <radialGradient id="glow" cx="82%" cy="22%" r="65%">
-      <stop offset="0%" stop-color="#d9772e" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#d9772e" stop-opacity="0"/>
+    <radialGradient id="glow" cx="80%" cy="18%" r="70%">
+      <stop offset="0%" stop-color="#2ee6c0" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#2ee6c0" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="tail" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#e0b483" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#e0b483" stop-opacity="0.85"/>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bff7ec" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#bff7ec" stop-opacity="0.9"/>
     </linearGradient>
-    <g id="shootingStar">
-      <line x1="-60" y1="0" x2="0" y2="0" stroke="url(#tail)" stroke-width="1.6" stroke-linecap="round"/>
-      <circle cx="0" cy="0" r="2" fill="#f2e2cf"/>
-    </g>
-    <g id="twinkle">
-      <circle r="1.2" fill="#d8c3a5"/>
+    <g id="sparkle">
+      <path d="M0,-6 L1.3,-1.3 L6,0 L1.3,1.3 L0,6 L-1.3,1.3 L-6,0 L-1.3,-1.3 Z" fill="#dffdf6"/>
     </g>
   </defs>
   <rect width="1200" height="300" fill="url(#sky)"/>
   <rect width="1200" height="300" fill="url(#glow)"/>
-  <g fill="#d8c3a5">
-    <use href="#twinkle" x="90" y="60"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.4s" repeatCount="indefinite" begin="0s"/></use>
-    <use href="#twinkle" x="220" y="120"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.1s" repeatCount="indefinite" begin="0.6s"/></use>
-    <use href="#twinkle" x="360" y="45"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.7s" repeatCount="indefinite" begin="1.1s"/></use>
-    <use href="#twinkle" x="520" y="95"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.4s" repeatCount="indefinite" begin="0.3s"/></use>
-    <use href="#twinkle" x="700" y="55"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite" begin="1.5s"/></use>
-    <use href="#twinkle" x="880" y="130"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.0s" repeatCount="indefinite" begin="0.9s"/></use>
-    <use href="#twinkle" x="1040" y="70"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.6s" repeatCount="indefinite" begin="0.2s"/></use>
-    <use href="#twinkle" x="1130" y="150"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.3s" repeatCount="indefinite" begin="1.3s"/></use>
-    <use href="#twinkle" x="150" y="200"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.9s" repeatCount="indefinite" begin="0.7s"/></use>
-    <use href="#twinkle" x="620" y="210"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.5s" repeatCount="indefinite" begin="1.0s"/></use>
+  <g fill="#cdeef0">
+    <circle cx="120" cy="70" r="1.6"><animate attributeName="opacity" values="0.25;1;0.25" dur="3s" repeatCount="indefinite" begin="0s"/></circle>
+    <circle cx="300" cy="110" r="1.3"><animate attributeName="opacity" values="0.25;1;0.25" dur="3.6s" repeatCount="indefinite" begin="0.8s"/></circle>
+    <circle cx="480" cy="60" r="1.5"><animate attributeName="opacity" values="0.25;1;0.25" dur="3.2s" repeatCount="indefinite" begin="1.4s"/></circle>
+    <circle cx="760" cy="90" r="1.3"><animate attributeName="opacity" values="0.25;1;0.25" dur="3.8s" repeatCount="indefinite" begin="0.4s"/></circle>
+    <circle cx="960" cy="65" r="1.6"><animate attributeName="opacity" values="0.25;1;0.25" dur="3.1s" repeatCount="indefinite" begin="1.1s"/></circle>
+    <circle cx="1080" cy="120" r="1.3"><animate attributeName="opacity" values="0.25;1;0.25" dur="3.5s" repeatCount="indefinite" begin="0.2s"/></circle>
+    <circle cx="200" cy="220" r="1.3"><animate attributeName="opacity" values="0.25;1;0.25" dur="3.4s" repeatCount="indefinite" begin="1.7s"/></circle>
+    <circle cx="1010" cy="215" r="1.4"><animate attributeName="opacity" values="0.25;1;0.25" dur="3.7s" repeatCount="indefinite" begin="0.9s"/></circle>
   </g>
-  <g>
-    <use href="#shootingStar" transform="rotate(20)"><animateTransform attributeName="transform" type="translate" values="-120,-40; 1300,420" dur="3.2s" repeatCount="indefinite" begin="0s" additive="sum"/><animate attributeName="opacity" values="0;1;1;0" dur="3.2s" repeatCount="indefinite" begin="0s"/></use>
-    <use href="#shootingStar" transform="rotate(20)"><animateTransform attributeName="transform" type="translate" values="-120,-120; 1300,340" dur="4.1s" repeatCount="indefinite" begin="1.4s" additive="sum"/><animate attributeName="opacity" values="0;1;1;0" dur="4.1s" repeatCount="indefinite" begin="1.4s"/></use>
+  <use href="#sparkle" x="620" y="55" opacity="0.9"><animate attributeName="opacity" values="0.35;1;0.35" dur="2.8s" repeatCount="indefinite" begin="0.5s"/></use>
+  <use href="#sparkle" x="880" y="200" opacity="0.8"><animate attributeName="opacity" values="0.35;1;0.35" dur="3.3s" repeatCount="indefinite" begin="1.6s"/></use>
+  <g transform="rotate(18)">
+    <g>
+      <line x1="-55" y1="0" x2="0" y2="0" stroke="url(#streak)" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="2" fill="#eafffb"/>
+      <animateTransform attributeName="transform" type="translate" values="-80,-30; 1320,380" dur="5s" repeatCount="indefinite" begin="1s" additive="sum"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="5s" repeatCount="indefinite" begin="1s"/>
+    </g>
   </g>
   <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle">
-    <text x="600" y="150" font-size="52" font-weight="600" fill="#ece3d6" letter-spacing="2">Tina Tuncheva</text>
-    <text x="600" y="190" font-size="18" font-weight="400" fill="#c79a6d" letter-spacing="7">FULL-STACK DEVELOPER</text>
+    <text x="600" y="150" font-size="52" font-weight="600" fill="#eafaf9" letter-spacing="2">Tina Tuncheva</text>
+    <text x="600" y="190" font-size="18" font-weight="400" fill="#5ce1c6" letter-spacing="7">FULL-STACK DEVELOPER</text>
   </g>
 </svg>
