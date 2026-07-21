@@ -64,12 +64,12 @@ jobs:
               y += row_h
           svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Contribution stats">
           <style>
-          .bg{{fill:#07242b;}}
+          .bg{{fill:#07242b;fill-opacity:0.12;}}
           .title{{fill:#ffd60a;font:700 20px 'Segoe UI',Helvetica,Arial,sans-serif;}}
           .sub{{fill:#5ce1c6;font:400 12px 'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:2px;}}
-          .l{{fill:#a9c7cf;font:400 16px 'Segoe UI',Helvetica,Arial,sans-serif;}}
+          .l{{fill:#c7d6da;font:400 16px 'Segoe UI',Helvetica,Arial,sans-serif;}}
           .v{{fill:#ffd60a;font:700 18px 'Segoe UI',Helvetica,Arial,sans-serif;}}
-          .rule{{stroke:#123b42;stroke-width:1;}}
+          .rule{{stroke:#5ce1c6;stroke-opacity:0.22;stroke-width:1;}}
           </style>
           <rect class="bg" width="{width}" height="{height}" rx="14"/>
           <text x="40" y="38" class="title">Contributions</text>
